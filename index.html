@@ -5,92 +5,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lion MD | Virtual Healthcare Staffing</title>
     <style>
-        /* CSS Variables for easy color adjustment */
+        /* CSS Variables - Defined by the Logo/Medical look */
         :root {
-            --medical-blue: #e6f2ff; /* Light medical blue */
-            --deep-blue: #0056b3;
+            --medical-blue: #e6f2ff; /* Light medical blue gradient center */
             --white: #ffffff;
+            --lion-black: #000000;  /* The color from your logo */
+            --button-contact: #28a745;
         }
 
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Setting the primary font family to Georgia, Serif */
+            font-family: 'Georgia', Times, serif;
             /* Gradient: White at top/bottom, Medical Blue in center */
             background: linear-gradient(to bottom, var(--white) 0%, var(--medical-blue) 50%, var(--white) 100%);
             background-attachment: fixed;
-            color: #333;
+            color: var(--lion-black);
+            -webkit-font-smoothing: antialiased; /* Sharper rendering for Serif fonts */
         }
 
         /* Top Left Header Section */
         header {
-            padding: 20px;
+            padding: 30px; /* Increased padding */
             display: flex;
             flex-direction: column;
             align-items: flex-start;
         }
 
         .logo {
-            width: 120px; /* Adjust size as needed */
+            width: 250px; /* Large badge size */
             height: auto;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
         }
 
-        .company-name {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--deep-blue);
+        /* Standard header font, matched to logo color */
+        .company-name-header {
+            font-size: 1.8rem;
+            color: var(--lion-black);
             margin: 0;
+            font-weight: normal; /* Just a standard label in the header */
         }
 
-        /* Main Content Area */
+        /* Main Content Area (Center) */
         main {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 40px 20px;
-            min-height: 60vh;
+            padding: 60px 20px;
+            min-height: 50vh;
         }
 
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+        /* The main company name (Middle of the page) */
+        h1.main-title {
+            font-size: 4rem; /* Significantly larger */
+            font-weight: bold; /* Must be BOLD per request */
+            margin-bottom: 15px;
+            color: var(--lion-black);
         }
 
-        p.tagline {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            font-style: italic;
+        /* The statement line below the name (Middle of the page) */
+        p.main-tagline {
+            font-size: 1.6rem; /* Large, but smaller than the name */
+            font-weight: normal; /* NOT bolded per request */
+            margin-bottom: 40px;
+            color: var(--lion-black);
+            max-width: 800px;
+            line-height: 1.4;
         }
 
-        /* Buttons and Form */
+        /* Buttons and Form (Same functionality, updated style) */
         .btn-container {
             display: flex;
-            gap: 20px;
+            gap: 25px;
             flex-wrap: wrap;
             justify-content: center;
+            margin-bottom: 30px;
         }
 
         .btn {
-            padding: 12px 25px;
-            font-size: 1rem;
+            padding: 15px 35px;
+            font-size: 1.1rem;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             text-decoration: none;
-            transition: background 0.3s ease;
+            transition: opacity 0.3s ease;
+            font-family: 'Georgia', serif; /* Buttons also use Serif */
+        }
+
+        .btn:hover {
+            opacity: 0.9;
         }
 
         .btn-login {
-            background-color: var(--deep-blue);
+            background-color: var(--lion-black); /* Matching the Logo color */
             color: white;
         }
 
         .btn-contact {
-            background-color: #28a745;
+            background-color: var(--button-contact);
             color: white;
         }
 
@@ -98,33 +115,41 @@
         #login-form {
             display: none;
             margin-top: 20px;
-            background: rgba(255, 255, 255, 0.8);
-            padding: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             width: 100%;
-            max-width: 300px;
+            max-width: 350px;
         }
 
         #login-form input {
             width: 90%;
-            padding: 10px;
-            margin: 10px 0;
+            padding: 12px;
+            margin: 12px 0;
             border: 1px solid #ccc;
             border-radius: 4px;
+            font-family: 'Georgia', serif;
         }
 
         /* Mobile Stacking Logic */
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
+            h1.main-title {
+                font-size: 2.5rem;
+            }
+            p.main-tagline {
+                font-size: 1.3rem;
+            }
+            .logo {
+                width: 180px; /* Slightly smaller badge on mobile */
+            }
             .btn-container {
                 flex-direction: column;
                 width: 100%;
+                gap: 15px;
             }
             .btn {
                 width: 100%;
-            }
-            h1 {
-                font-size: 1.8rem;
             }
         }
     </style>
@@ -133,12 +158,12 @@
 
     <header>
         <img src="lion.jpg" alt="Lion MD Logo" class="logo">
-        <h2 class="company-name">Lion MD</h2>
     </header>
 
     <main>
-        <h1>Lion MD</h1>
-        <p class="tagline">Premier Virtual Healthcare Staffing Solutions</p>
+        <h1 class="main-title">Lion MD</h1>
+        
+        <p class="main-tagline">Premier Virtual Healthcare Staffing Solutions</p>
 
         <div class="btn-container">
             <button class="btn btn-login" onclick="toggleLogin()">Provider Login</button>
@@ -146,6 +171,7 @@
         </div>
 
         <div id="login-form">
+            <h3 style="margin-top: 0; color: #000;">Secure Portal</h3>
             <input type="text" placeholder="Username">
             <input type="password" placeholder="Password">
             <button class="btn btn-login" style="width: 100%;">Enter</button>
@@ -153,12 +179,17 @@
     </main>
 
     <script>
+        // Toggles the login form visibility
         function toggleLogin() {
             var form = document.getElementById("login-form");
             if (form.style.display === "block") {
                 form.style.display = "none";
             } else {
                 form.style.display = "block";
+                // Scrolls to the form on mobile when opened
+                setTimeout(function() {
+                    form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 100);
             }
         }
     </script>
