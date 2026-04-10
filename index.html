@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lion MD | Virtual Healthcare Staffing</title>
+    <style>
+        /* CSS Variables for easy color adjustment */
+        :root {
+            --medical-blue: #e6f2ff; /* Light medical blue */
+            --deep-blue: #0056b3;
+            --white: #ffffff;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Gradient: White at top/bottom, Medical Blue in center */
+            background: linear-gradient(to bottom, var(--white) 0%, var(--medical-blue) 50%, var(--white) 100%);
+            background-attachment: fixed;
+            color: #333;
+        }
+
+        /* Top Left Header Section */
+        header {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .logo {
+            width: 120px; /* Adjust size as needed */
+            height: auto;
+            margin-bottom: 5px;
+        }
+
+        .company-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--deep-blue);
+            margin: 0;
+        }
+
+        /* Main Content Area */
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+            min-height: 60vh;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        p.tagline {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        /* Buttons and Form */
+        .btn-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .btn-login {
+            background-color: var(--deep-blue);
+            color: white;
+        }
+
+        .btn-contact {
+            background-color: #28a745;
+            color: white;
+        }
+
+        /* Hidden Login Form */
+        #login-form {
+            display: none;
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 300px;
+        }
+
+        #login-form input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        /* Mobile Stacking Logic */
+        @media (max-width: 600px) {
+            .btn-container {
+                flex-direction: column;
+                width: 100%;
+            }
+            .btn {
+                width: 100%;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="lion.jpg" alt="Lion MD Logo" class="logo">
+        <h2 class="company-name">Lion MD</h2>
+    </header>
+
+    <main>
+        <h1>Lion MD</h1>
+        <p class="tagline">Premier Virtual Healthcare Staffing Solutions</p>
+
+        <div class="btn-container">
+            <button class="btn btn-login" onclick="toggleLogin()">Provider Login</button>
+            <a href="mailto:contact@lion.md" class="btn btn-contact">Contact Us</a>
+        </div>
+
+        <div id="login-form">
+            <input type="text" placeholder="Username">
+            <input type="password" placeholder="Password">
+            <button class="btn btn-login" style="width: 100%;">Enter</button>
+        </div>
+    </main>
+
+    <script>
+        function toggleLogin() {
+            var form = document.getElementById("login-form");
+            if (form.style.display === "block") {
+                form.style.display = "none";
+            } else {
+                form.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>
