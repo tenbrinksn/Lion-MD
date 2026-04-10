@@ -6,8 +6,7 @@
     <title>Lion MD | Virtual Healthcare Staffing</title>
     <style>
         :root {
-            --medical-blue-center: #e6f2ff; 
-            --header-blue: #0056b3; /* Professional Medical Blue */
+            --header-blue: #0056b3; 
             --white: #ffffff;
             --lion-black: #000000;
             --button-contact: #28a745;
@@ -18,9 +17,8 @@
             padding: 0;
             min-height: 100%;
             font-family: 'Georgia', Times, serif;
-            /* Gradient: White top/bottom, Medical Blue center */
-            background: linear-gradient(to bottom, var(--white) 0%, var(--medical-blue-center) 50%, var(--white) 100%);
-            background-attachment: fixed;
+            /* Background changed to solid white */
+            background-color: var(--white);
             color: var(--lion-black);
         }
 
@@ -29,7 +27,7 @@
             width: 100%;
             background-color: var(--header-blue);
             padding: 15px 0;
-            text-align: center; /* Small name in top center, or change to left if preferred */
+            text-align: center;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
@@ -51,15 +49,15 @@
             padding: 80px 20px;
         }
 
-        /* Logo - Now 2x size (500px) and Centered */
+        /* Logo - 500px wide and Centered */
         .central-logo {
             width: 500px; 
-            max-width: 90%; /* Ensures it doesn't break on small screens */
+            max-width: 90%; 
             height: auto;
             margin-bottom: 30px;
         }
 
-        /* Company Name - 2x size (~8rem) */
+        /* Company Name - 8rem */
         .huge-title {
             font-size: 8rem; 
             font-weight: bold;
@@ -68,7 +66,7 @@
             line-height: 1;
         }
 
-        /* Tagline - 2x size (~3.2rem) */
+        /* Tagline - 3.2rem */
         .huge-tagline {
             font-size: 3.2rem;
             font-weight: normal;
@@ -116,10 +114,10 @@
         #login-form {
             display: none;
             margin-top: 20px;
-            background: var(--white);
+            background: #f9f9f9; /* Subtle grey to distinguish from white background */
             padding: 40px;
             border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             width: 100%;
             max-width: 400px;
         }
@@ -133,7 +131,7 @@
             font-size: 1rem;
         }
 
-        /* Mobile Adjustments - Prevents the "2x size" from breaking the phone layout */
+        /* Mobile Adjustments */
         @media (max-width: 900px) {
             .huge-title {
                 font-size: 4rem;
